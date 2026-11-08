@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "oladi.omasee",
+  "name": "OmaSee",
+  "version": "1.0.0",
+  "author": "oladi",
+  "license": "MIT",
+  "description": "A living system monitor for the bar: CPU, GPU, network and memory with breathing heartbeats, sparklines and animated reports.",
+  "kinds": ["bar-widget"],
+  "entryPoints": { "barWidget": "BarWidget.qml" },
+  "barWidget": {
+    "displayName": "OmaSee",
+    "description": "Live CPU, GPU and system stats with animated, rearrangeable reports.",
+    "category": "System",
+    "defaultSection": "left",
+    "allowMultiple": false,
+    "defaults": { "temperatureUnit": "Celsius" },
+    "schema": [
+      { "key": "temperatureUnit", "type": "enum", "label": "Temperature unit", "options": ["Celsius", "Fahrenheit"], "defaultValue": "Celsius" }
+    ]
+  }
+}

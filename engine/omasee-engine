@@ -1,0 +1,7 @@
+#!/bin/bash
+# OmaSee engine launcher. Runs Python in isolated mode (-I) so nothing from the
+# caller's environment, working directory or user site-packages is imported.
+set -euo pipefail
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$here"
+exec python3 -I -B -c 'import sys; sys.path.insert(0, sys.argv.pop(1)); from omasee.__main__ import main; sys.exit(main())' "$here" "$@"
